@@ -24,5 +24,13 @@ int main()
 	// 5. Close the file
 	inFile.close();
 
+	int number3;
+	std::cin >> number3;
+	std::cout << "The number read from the console is: " << number3 << std::endl;
+
+	int number4;
+	std::cin >> number4;
+	std::cout << "The second number read from the console is: " << number4 << std::endl;
+
 	return 0;
 }
