@@ -41,5 +41,7 @@ int main()
 	// 3. Write number to file
 	outFile << "The first number is: " << number << std::endl;
 
+	outFile.close();
+
 	return 0;
 }
