@@ -32,5 +32,14 @@ int main()
 	std::cin >> number4;
 	std::cout << "The second number read from the console is: " << number4 << std::endl;
 
+	// 1. Create an ofstream object to write to a file
+	std::ofstream outFile;
+
+	// 2. Open the file
+	outFile.open("outMeanStd.dat");
+
+	// 3. Write number to file
+	outFile << "The first number is: " << number << std::endl;
+
 	return 0;
 }
