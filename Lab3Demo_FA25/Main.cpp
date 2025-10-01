@@ -35,6 +35,12 @@ int main()
 	std::cin >> number4;
 	std::cout << "The second number read from the console is: " << number4 << std::endl;
 
+	float mean = (number + number2 + number3 + number4) / 4.0f;
+	float stdDev = popStdDev(number, number2, number3, number4, mean);
+
+	std::cout << "The mean is: " << mean << std::endl;
+	std::cout << "The population standard deviation is: " << stdDev << std::endl;
+
 	// 1. Create an ofstream object to write to a file
 	std::ofstream outFile;
 
@@ -42,7 +48,8 @@ int main()
 	outFile.open("outMeanStd.dat");
 
 	// 3. Write number to file
-	outFile << "The first number is: " << number << std::endl;
+	outFile << "The mean is: " << mean << std::endl;
+	outFile << "The population standard deviation is: " << stdDev << std::endl;
 
 	outFile.close();
 
@@ -51,6 +58,6 @@ int main()
 
 float popStdDev(float f_num1_, float f_num2_, float f_num3_, float f_num4_, float f_mean_)
 {
-	return (pow(f_num1_ - f_mean_, 2) + pow(f_num2_ - f_mean_, 2) + pow(f_num3_ - f_mean_, 2) + 
-		pow(f_num4_ - f_mean_, 2)) / 4;
+	return sqrt((pow(f_num1_ - f_mean_, 2) + pow(f_num2_ - f_mean_, 2) + pow(f_num3_ - f_mean_, 2) + 
+		pow(f_num4_ - f_mean_, 2)) / 4);
 }
