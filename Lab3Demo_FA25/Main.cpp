@@ -1,5 +1,8 @@
 #include <iostream>
 #include <fstream>
+#include <cmath>
+
+float popStdDev(float f_num1_, float f_num2_, float f_num3_, float f_num4_, float f_mean_);
 
 int main() 
 {
@@ -44,4 +47,10 @@ int main()
 	outFile.close();
 
 	return 0;
+}
+
+float popStdDev(float f_num1_, float f_num2_, float f_num3_, float f_num4_, float f_mean_)
+{
+	return (pow(f_num1_ - f_mean_, 2) + pow(f_num2_ - f_mean_, 2) + pow(f_num3_ - f_mean_, 2) + 
+		pow(f_num4_ - f_mean_, 2)) / 4;
 }
